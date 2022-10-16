@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>votApp v.10</title>
+    <meta charset="utf-8" content="Sistema de votaciones en línea, vote por su candidato de preferencia">
+    <link rel="stylesheet" th:href="@{/css/miEstilo.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <script type="text/javascript" th:src="@{/js/votapp.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+</head>
+
+<body class="bodyClass">
+    <div id="encabezado">
+        <!-- 1. Crear el Titulo de la Página -->
+        <h1>Opción 1 Titulo de la Página</h1>
+        <font align="center" face="Verdana" color="#024A86" size="6">Opción 2 Titulo de la Página</font><br>
+        <img src="img/titulo.png" width="300" height="100">
+    </div>
+
+    <div id="contenido">
+        <!-- 2. Crear la descripción de la Página -->
+
+        <p align="justify">
+            Descripción de la página, colocan el contenido que deseen
+            (puede
+            contener texo e imagénes) y el formato que deseen aplicar a su gusto. Mínimo debe contar con 5 líneas el
+            parráfo. Descripción de la página, colocan el contenido que deseen (puede contener texo e imagénes) y el
+            formato que deseen aplicar a su gusto. Mínimo debe contar con 5 líneas el parráfo. Descripción de la
+            página,
+            colocan el contenido que deseen (puede contener texo e imagénes) y el formato que deseen aplicar a su
+            gusto.
+        </p>
+
+        <!-- 3. Crear la tabla de candidatos -->
+
+        <table class="table table-dark table-striped">
+            <thead>
+                <th id="titTab">Nombre del Candidato 1</th>
+                <th id="titTab">Nombre del Candidato 2</th>
+            </thead>
+            <tr>
+                <td width="350">
+                    <center><img src="img/persona1.jpeg" class="styleImgAn"></center>
+                    <p>
+                        Descripción del canditato Descripción del canditato Descripción del canditato Descripción
+                        del
+                        canditato Descripción del canditato Descripción del canditato Descripción del canditato
+                    </p>
+                    <br>
+                    <center>
+                        <button type="button" class="btn btn-outline-light" onclick="javascript: votar(0);">Votar</button>
+                        <a th:href="@{/partidos}"><img src="img/partidos-politicos.webp" width="150" height="40"></a>
+                    </center>
+                </td>
+                <td width="350">
+                    <center><img src="img/persona2.jpeg" class="styleImgAn"></center>
+                    <p>
+                        Descripción del canditato Descripción del canditato Descripción del canditato Descripción
+                        del
+                        canditato Descripción del canditato Descripción del canditato Descripción del canditato
+                    </p>
+                    <br>
+                    <center>
+                        <button type="button" class="btn btn-outline-light" onclick="javascript: votar(1);">Votar</button>
+                        <a th:href="@{/partidos}"><img src="img/partidos-politicos.webp" width="150" height="40"></a>
+                    </center>
+                </td>
+            </tr>
+            <thead>
+                <th id="titTab">Nombre del Candidato 3</th>
+                <th id="titTab">Nombre del Candidato 4</th>
+            </thead>
+            <tr>
+                <td width="350">
+                    <center><img src="img/persona3.jpeg" class="styleImgAn"></center>
+                    <p>
+                        Descripción del canditato Descripción del canditato Descripción del canditato Descripción
+                        del
+                        canditato Descripción del canditato Descripción del canditato Descripción del canditato
+                    </p>
+                    <br>
+                    <center>
+                        <button type="button" class="btn btn-outline-light" onclick="javascript: votar(2);">Votar</button>
+                        <a th:href="@{/partidos}"><img src="img/partidos-politicos.webp" width="150" height="40"></a>
+                    </center>
+                </td>
+                <td width="350">
+                    <center><img src="img/persona4.jpeg" class="styleImgAn"></center>
+                    <p>
+                        Descripción del canditato Descripción del canditato Descripción del canditato Descripción
+                        del
+                        canditato Descripción del canditato Descripción del canditato Descripción del canditato
+                    </p>
+                    <br>
+                    <center>
+                        <button type="button" class="btn btn-outline-light" onclick="javascript: votar(3);">Votar</button>
+                        <a th:href="@{/partidos}"><img src="img/partidos-politicos.webp" width="150" height="40"></a>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="info">
+        <br>
+        <img src="img/estadistica.jpeg" class="styleImg"><br>
+        <table class="tbPer" border="0" align="center">
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-outline-primary" onclick="javascript: estadistica();">Resultados Consolidados</button>
+                    <button type="button" class="btn btn-outline-danger"> Resultados por Regiones </button>
+                    <button type="button" class="btn btn-outline-warning"> Resultados por Ciudades </button>
+                </td>
+            </tr>
+        </table><br><br>
+        <div id="conEst"></div><br><br>
+        <center><canvas id="grafica" width="200px" align="center"></canvas></center>
+    </div>
+</body>
+
+</html>
